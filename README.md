@@ -106,3 +106,5 @@ After 100 epoch
 Reference: 
 
 https://github.com/KaimingHe/resnet-1k-layers/blob/master/README.md
+
+[1] Canatalay, Peren & UÃ§an, Osman & Zontul, Metin. (2021). DIAGNOSIS OF BREAST CANCER FROM X-RAY IMAGES USING DEEP LEARNING METHODS. PONTE International Scientific Researches Journal. 77. 10.21506/j.ponte.2021.6.1. 
