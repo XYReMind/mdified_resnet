@@ -101,3 +101,8 @@ After 100 epoch
 | Optimzer          | Training loss | Train Best Acc   |Test loss |Test Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|-------------:|
 | SGD with Nesterov | 0.08309       | 97.135%          | 0.35683  | 91.45%       |
+
+
+Reference: 
+
+https://github.com/KaimingHe/resnet-1k-layers/blob/master/README.md
