@@ -1,5 +1,5 @@
 # Modified ResNet for ECE 6953 - Deep Learning 
-By Xiaoyuan Lin 
+
 
 Introduction: This model inspired the paper: https://arxiv.org/abs/1603.05027. It reaches 91.45% accuracy on the CIFAR-10 image classifaction dataset after 100 epochs and it contains ~1M parameters, which satisfied the project requirement. 
 
