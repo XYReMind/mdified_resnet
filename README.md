@@ -50,48 +50,48 @@ First try different optimizer
 
 SGD and SGD with Nesterov perform better.
 
-Then use these two optimzer for the following parameters tuning. 
+Then use these two optimzier for the following parameters tuning. 
 
 1. Batch size 64 with num workers = 2, lr=0.1, momentum=0.9, weight_deca=5e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD               | 0.58887       | 79.83%           | 1.13847  | 79.03%      |
 | SGD with Nesterov | 0.56224       | 80.6625%         | 0.67857  | 80.16%      |
 
 2. Use only SGD with Nesterov since it performs better than SGD in both cases. Change the num workers. Num worker = 4 batch size = 128, lr=0.1, momentum=0.9, weight_deca=5e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.3983        | 86.2475%         | 0.55617  | 83.01%      |
 
 3. Num worker = 2 batch size =256, lr=0.1, momentum=0.9, weight_deca=5e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.27637       | 90.53%           | 0.61719  | 83.73%      |
 
 4. Num worker = 2 batch size =128, lr=0.1, momentum=0.9, weight_deca=1e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimzier          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.19765       | 93.055%          | 0.35552  | 88.32%      |
 
 5. Num worker = 4 batch size =128, lr=0.1, momentum=0.9, weight_deca=1e4 *(BEST)
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.19466       | 93.17%           | 0.37038  | 88.88%      |
 
 6. Num worker = 4 batch size =256, lr=0.1, momentum=0.9, weight_deca=1e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.13924       | 95.035%          | 0.52717  | 87.54%      |
 
 7. Num worker = 6 batch size =128, lr=0.1, momentum=0.9, weight_deca=1e4
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimzier          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD with Nesterov | 0.19155       | 93.2775%         | 0.37363  | 88.25%      |
 
@@ -101,7 +101,7 @@ Then use these two optimzer for the following parameters tuning.
 Num worker = 4 batch size =128, lr=0.1, momentum=0.9, weight_deca=1e4
 After 100 epoch 
 
-| Optimzer          | Training loss | Train Best Acc   |Test loss |Test Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Test loss |Test Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|-------------:|
 | SGD with Nesterov | 0.08309       | 97.135%          | 0.35683  | 91.45%       |
 
