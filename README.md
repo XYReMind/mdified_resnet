@@ -26,7 +26,7 @@ https://sites.google.com/nyu.edu/nyu-hpc/hpc-systems/greene/getting-started?auth
 
 You also need to connect to NYU VPN before using Greene. https://www.nyu.edu/life/information-technology/infrastructure/network-services/vpn.html is a guide to using VPN. 
 
-RTX8000 NVIDIA GPU is used for this preject. Mem is set to 8GB. CPU-per-task is set to 1. node = 1
+RTX8000 NVIDIA GPU is used for this project. Mem is set to 8GB. CPU-per-task is set to 1. node = 1
 
 ## Setup and run  
 
