@@ -1,3 +1,5 @@
+#### Imports ####
+##torch
 import torch
 import torchvision
 import torchvision.transforms as transforms
@@ -23,8 +25,11 @@ import argparse
 import sys
 ##scripts
 import resnet
+import densnet
 import binaryconnect
+import tp3_bin
 import utils
+import profiler
 
 
 
@@ -206,6 +211,20 @@ def pos_zeros(model):
             print('{0:20} {1} / {2}'.format(name1, len([x for x in zeros if x > 50.0]),len(zeros)))
 
 
+def get_micronet_score(model):
+    '''
+    Description :
+    ------------
+    Print micronet score and it computation. Kill process after getting it
+    Parameters :
+    ------------
+    model (object) : model to evaluate
+    Prints :
+    ---------
+    Micronet score
+    '''
+    score = profiler.main(model)
+    sys.exit('Kill after getting micronet score : {}'.format(score))
 
 def get_nb_params(model):
     return sum(p.numel() for p in model.parameters())
@@ -242,13 +261,31 @@ scheduler = torch.optim.lr_scheduler.CosineAnnealingLR(optimizer, T_max=args.epo
 if args.bin:
     backbonemodel = binaryconnect.BC(backbonemodel)
 
+
+## get pretrained weights if path is not none
+if args.path != None :
+    backbonemodel = backbonemodel.load_weights(args.path)
+
 ## if pruning is selected, then prune model and print its sparsity
 if args.pruning:
     backbonemodel = backbonemodel.get_prune_model(args.method,args.ratio)
     get_sparsity(backbonemodel)
 
 
+## if --score is selected, then calculate the micronet score of the model
+if args.score :
+
+    ##check if the model is pruned (has a weight mask)
+    if 'conv1.weight_mask' in state_dict.keys():
+        for name, module in backbonemodel.named_modules():
+                if isinstance(module, torch.nn.Conv2d) or isinstance(module, torch.nn.Linear) or isinstance(module, torch.nn.BatchNorm2d) or isinstance(module, torch.nn.AvgPool2d):
+                    module = prune.remove(module, 'weight')
+    get_micronet_score(backbonemodel)
+## training and test processes
+
 if args.train :
+
+
     ## load model in the device (cpu or cuda)
     backbonemodel = backbonemodel.to(device)
 

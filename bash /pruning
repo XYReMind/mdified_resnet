@@ -1,0 +1,20 @@
+#!/bin/bash
+#SBATCH --job-name=min_project
+#SBATCH --output=%x.out
+#SBATCH --cpus-per-task=1
+#SBATCH --time=04:00:00
+#SBATCH --mem=8GB
+#SBATCH --gres=gpu:1
+#SBATCH --nodes=1
+
+module purge
+module load anaconda3/2020.07
+module load python/intel/3.8.6
+pip install torchsummary
+
+#pip3 install torch==1.9.0+cu111 torchvision==0.10.0+cu111 torchaudio==0.9.0 -f https://download.pytorch.org/whl/torch_stable.html
+pip install pytorch torchvision torchaudio cudatoolkit=11.1 -c pytorch -c nvidia
+
+cd /scratch/xl3914/dl/pruning
+python tp3_main.py --test --dataset cifar10  --modelToUse resnet18 --batch_size 32 --path cifar10_resnet18 --pruning --method global --ratio 0.45
+
