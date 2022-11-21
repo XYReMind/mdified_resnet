@@ -38,9 +38,9 @@ RTX8000 NVIDIA GPU is used for this preject. Mem is set to 8GB. CPU-per-task is 
 
 ## Experiment Progress(use only 50 epochs)
 
-First try different optimzer
+First try different optimizer
 
-| Optimzer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
+| Optimizer          | Training loss | Train Best Acc   |Val loss  |Val Best Acc |
 | ----------------- |:-------------:| ----------------:|---------:|------------:|
 | SGD               | 0.39477       | 86.52%           | 0.59443  | 83.48%      |
 | SGD with Nesterov | 0.37395       | 87.2325%         | 0.61652  | 84.51%      |
