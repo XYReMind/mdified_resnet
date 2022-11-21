@@ -31,7 +31,7 @@ RTX8000 NVIDIA GPU is used for this project. Mem is set to 8GB. CPU-per-task is 
 ## Setup and run  
 
 1. ssh into NYU green
-2. Using the btach file provided in this repo. Run "sbatch min_project.sh"
+2. Using the btach file provided in this repo. Run "sbatch min_project.sh" (ou can other two sh files for method 1 and method 2)
 3. Using command "squeue -u USERNAME" to check the progress of the training. 
 4. Result will be store in file names "min_preoject.out"
 
